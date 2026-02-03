@@ -1,0 +1,21 @@
+{
+  "name": "SNBT Countdown 2026",
+  "short_name": "SNBT 2026",
+  "description": "Countdown SNBT 2026.",
+  "start_url": "/snbt/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#8b0000",
+  "icons": [
+    {
+      "src": "meme.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "meme.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
