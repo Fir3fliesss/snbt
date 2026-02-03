@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNBT Countdown</title>
+    <title>SNBT Countdown 2026 | Persiapkan Dirimu</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hitung mundur SNBT 2026. Pantau sisa waktu Anda untuk persiapan seleksi nasional berbasis tes dengan tema yang mencekam dan fokus.">
+    <meta name="keywords" content="SNBT, SNBT 2026, Countdown SNBT, Seleksi Nasional Berbasis Tes, Jadwal SNBT, Persiapan SNBT">
+    <meta name="author" content="fir3fliesss - synchronizeteams">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://synchronizeteams.com/snbt">
+    <meta property="og:title" content="SNBT Countdown 2026 | Persiapkan Dirimu">
+    <meta property="og:description" content="Jangan biarkan waktu berlalu begitu saja. Hitung mundur SNBT 2026 sekarang.">
+    <meta property="og:image" content="haunting_snbt_image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
@@ -21,13 +34,12 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
+        body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Inter', sans-serif;
+            height: 100dvh;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,14 +47,10 @@
 
         .container {
             position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            z-index: 10;
             text-align: center;
-            z-index: 2;
+            width: 100%;
+            padding: 20px;
         }
 
         .background-image {
@@ -66,7 +74,7 @@
 
         .title {
             font-family: 'Crimson Text', serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 5vw, 1.8rem);
             letter-spacing: 0.5rem;
             text-transform: uppercase;
             margin-bottom: 2rem;
@@ -78,7 +86,9 @@
 
         .countdown {
             display: flex;
-            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: clamp(1rem, 4vw, 2.5rem);
             font-family: 'Crimson Text', serif;
             margin-bottom: 3rem;
         }
@@ -86,10 +96,11 @@
         .time-box {
             display: flex;
             flex-direction: column;
+            min-width: 80px;
         }
 
         .number {
-            font-size: 6rem;
+            font-size: clamp(3rem, 15vw, 6rem);
             font-weight: 700;
             color: var(--accent-color);
             text-shadow: 0 0 25px rgba(139, 0, 0, 0.8);
@@ -97,7 +108,7 @@
         }
 
         .label {
-            font-size: 1rem;
+            font-size: clamp(0.7rem, 2vw, 1rem);
             text-transform: uppercase;
             letter-spacing: 0.3rem;
             margin-top: 0.8rem;
@@ -106,9 +117,9 @@
         }
 
         .meme-container {
-            width: 200px;
-            height: 200px;
-            margin-top: 2rem;
+            width: clamp(120px, 30vw, 200px);
+            height: clamp(120px, 30vw, 200px);
+            margin: 2rem auto 0;
             border: 1px solid rgba(139, 0, 0, 0.3);
             padding: 5px;
             background: rgba(0, 0, 0, 0.5);
@@ -121,6 +132,31 @@
             object-fit: cover;
             filter: grayscale(100%) contrast(120%) brightness(80%);
             opacity: 0.7;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(0.6rem, 2vw, 0.9rem);
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            opacity: 0.4;
+            z-index: 10;
+            transition: opacity 0.3s ease;
+        }
+
+        footer:hover {
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(209, 209, 209, 0.2);
+            padding-bottom: 2px;
         }
 
         @keyframes subtle-shake {
@@ -147,10 +183,16 @@
             pointer-events: none;
         }
 
-        @media (max-width: 768px) {
-            .number { font-size: 3.5rem; }
-            .countdown { gap: 1.5rem; }
-            .meme-container { width: 150px; height: 150px; }
+        @media (max-width: 480px) {
+            .countdown {
+                gap: 1rem;
+            }
+            .time-box {
+                min-width: 65px;
+            }
+            footer {
+                bottom: 1rem;
+            }
         }
     </style>
 </head>
@@ -184,6 +226,10 @@
             <img src="meme.png" alt="Final Warning">
         </div>
     </div>
+
+    <footer>
+        <a href="https://synchronizeteams.com" target="_blank">synchronizeteams</a>
+    </footer>
 
     <script>
         const targetDate = new Date("April 21, 2026 08:00:00").getTime();
